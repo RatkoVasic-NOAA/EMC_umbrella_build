@@ -1,0 +1,12 @@
+#%Module######################################################################
+proc ModulesHelp { } {
+        puts stderr "Set environment veriables for netcdf"
+}
+
+set sys         [uname sysname]
+set NCEPLIBS  _CWD_
+set LIBRDIR   $NCEPLIBS/ext_libs/netcdf_v3.6.3
+
+prepend-path PATH  $LIBRDIR/bin
+
+setenv NETCDF      $LIBRDIR

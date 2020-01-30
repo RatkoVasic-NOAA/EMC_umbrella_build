@@ -1,0 +1,26 @@
+#%Module######################################################################
+proc ModulesHelp { } {
+        puts stderr "Set environment veriables for bufr of nceplibs"
+}
+
+set sys         [uname sysname]
+set ver v11.0.1
+set lname bufr
+set bname BUFR
+set NCEPLIBS      _CWD_
+set dlib $NCEPLIBS
+set COMP intel
+set path $NCEPLIBS
+
+setenv ${bname}_SRC     $dlib/sorc/${lname}_${ver}
+setenv ${bname}_LIB4    $dlib/libs/${lname}_${ver}/lib${lname}_${ver}_4_64.a 
+setenv ${bname}_LIB8    $dlib/libs/${lname}_${ver}/lib${lname}_${ver}_8_64.a
+setenv ${bname}_LIBd    $dlib/libs/${lname}_${ver}/lib${lname}_${ver}_d_64.a
+setenv ${bname}_LIBs    $dlib/libs/${lname}_${ver}/lib${lname}_${ver}_s_64.a
+setenv ${bname}_LIB4_DA $dlib/libs/${lname}_${ver}/lib${lname}_${ver}_4_64_DA.a 
+setenv ${bname}_LIB8_DA $dlib/libs/${lname}_${ver}/lib${lname}_${ver}_8_64_DA.a
+setenv ${bname}_LIBd_DA $dlib/libs/${lname}_${ver}/lib${lname}_${ver}_d_64_DA.a
+
+setenv LIB_NAME ${bname} 
+setenv ${bname}_VER $ver
+

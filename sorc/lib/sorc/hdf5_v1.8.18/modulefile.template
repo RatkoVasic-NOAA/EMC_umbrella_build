@@ -1,0 +1,15 @@
+#%Module######################################################################
+proc ModulesHelp { } {
+        puts stderr "Set environment veriables for hdf5"
+}
+
+set sys         [uname sysname]
+set NCEPLIBS  _CWD_
+set LIBRDIR   $NCEPLIBS/ext_libs/hdf5_v1.8.18
+
+prepend-path PATH            $LIBRDIR/bin
+prepend-path LD_LIBRARY_PATH $LIBRDIR/lib
+
+setenv HDF5               $NCEPLIBS/ext_libs/hdf5_v1.8.18
+setenv HDF5_INCLUDE_OPTS "-I${LIBRDIR}/include"
+setenv HDF5_LINK_OPTS    "-L${LIBRDIR}/lib -lhdf5_hl -lhdf5"

@@ -1,0 +1,17 @@
+#%Module######################################################################
+proc ModulesHelp { } {
+        puts stderr "Set environment veriables for xmlparse"
+}
+
+set sys         [uname sysname]
+set NCEPLIBS      _CWD_
+set ver v2.0.0
+set lname xmlparse
+set dlib   $NCEPLIBS/ext_libs/${lname}_${ver}
+set bname XMLPARSE
+
+setenv ${bname}_SRC $NCEPLIBS/sorc/${lname}_${ver}
+setenv ${bname}_INC $dlib/include
+setenv ${bname}_LIB $dlib/lib/lib${lname}.a
+setenv LIB_NAME ${bname}
+setenv ${bname}_VER $ver

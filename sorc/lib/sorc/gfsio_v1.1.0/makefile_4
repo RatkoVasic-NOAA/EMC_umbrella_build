@@ -1,0 +1,15 @@
+LIB     = ../../libgfsio_v1.1.0_4.a
+INCMOD  = ../../incmod/gfsio_v1.1.0_4
+FC      = $(FCMP)
+FFLAGS  = -traceback -g -xHOST -convert big_endian -assume byterecl  -I$(INCMOD) -FR
+AR      = ar
+ARFLAGS = -rv 
+
+$(LIB): $(LIB)(gfsio_module.o) 
+.f.a:
+	$(FC) -c $(FFLAGS) $<
+	$(AR) $(ARFLAGS) $@ $*.o
+	rm -f $*.o
+	mkdir -p $(INCMOD)
+	mv $*.mod $(INCMOD)
+

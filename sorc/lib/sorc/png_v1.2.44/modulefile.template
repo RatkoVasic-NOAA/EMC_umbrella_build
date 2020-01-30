@@ -1,0 +1,23 @@
+#%Module######################################################################
+proc ModulesHelp { } {
+        puts stderr "Set environment veriables for sp of nceplibs"
+}
+
+set sys         [uname sysname]
+set NCEPLIBS      _CWD_
+set ver v1.2.44
+set lname png
+set dlib $NCEPLIBS/ext_libs/${lname}_${ver}
+set bname PNG
+set COMP intel
+set path $NCEPLIBS
+
+setenv ${bname}_SRC    $NCEPLIBS/sorc/${lname}_${ver}
+setenv ${bname}_INC    $dlib/incmod
+setenv ${bname}_LIBDIR $dlib/libs
+setenv ${bname}_LIB    $dlib/libs/lib${lname}.a
+setenv ${bname}_LIB12  $dlib/libs/lib${lname}12.a
+setenv ${bname}_LIBso  $dlib/libs/lib${lname}.so
+
+setenv LIB_NAME ${bname} 
+setenv ${bname}_VER $ver

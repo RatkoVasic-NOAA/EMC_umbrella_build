@@ -1,0 +1,17 @@
+#%Module######################################################################
+proc ModulesHelp { } {
+        puts stderr "Set environment veriables for esmf"
+}
+
+set sys         [uname sysname]
+set NCEPLIBS  _CWD_
+set LIBRDIR   $NCEPLIBS/ext_libs/esmf_v7.1.0r
+
+prepend-path PATH              $LIBRDIR/bin
+prepend-path LD_LIBRARY_PATH   $LIBRDIR/lib
+
+setenv  ESMF_DIR     $LIBRDIR
+setenv  ESMFMKFILE   $LIBRDIR/lib/esmf.mk
+setenv  ESMF_LIB     $LIBRDIR/lib
+setenv  ESMF_MOD     $LIBRDIR/mod
+setenv  ESMF_INC     $LIBRDIR/include
